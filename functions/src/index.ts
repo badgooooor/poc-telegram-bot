@@ -10,9 +10,13 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN as string;
 const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
 
 // Handling command
-bot.command('/start', ctx => 
+bot.command('start', ctx => 
   ctx.reply('Hello! Send any message and I will copy it.')
 );
+
+bot.command('test', ctx => {
+  ctx.reply('Test');
+});
 
 // Send handling messages.
 bot.on('message', (ctx) => ctx.reply('Got message'));
